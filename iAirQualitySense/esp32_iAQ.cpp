@@ -39,7 +39,6 @@ void esp32_iAQ::init_ENS210(uint8_t deviceID)
   write2device(deviceID, (uint8_t)0x3);
 }
 
-
 float esp32_iAQ::get_temperature()
 /*----------------------------------------------------------------------------
     get_temperature
@@ -52,7 +51,6 @@ float esp32_iAQ::get_temperature()
   return (temperature);
 }
 
-
 float esp32_iAQ::get_humidity()
 /*----------------------------------------------------------------------------
     get_humidity
@@ -61,9 +59,9 @@ float esp32_iAQ::get_humidity()
     Written by  : RaspiRepo
 ------------------------------------------------------------------------------*/
 {
+  //Relative humidity operating range (0% to 100%) %RH
   return (humidity);
 }
-
 
 uint16_t esp32_iAQ::get_iaq()
 /*----------------------------------------------------------------------------
@@ -103,6 +101,7 @@ void esp32_iAQ::write2device(uint8_t deviceID, uint8_t data)
   Wire.beginTransmission(deviceID);
   Wire.write(data);
   Wire.endTransmission();
+
 }
 
 
@@ -130,7 +129,7 @@ void esp32_iAQ::read_from_ens210 ()
     ++data_buf;
     ++bytes_ret;
   }
-
+  
   int32_t t_val = (ens210_data_buf[2]<<16) + (ens210_data_buf[1]<<8) + (ens210_data_buf[0]<<0);
   int32_t h_val = (ens210_data_buf[5]<<16) + (ens210_data_buf[4]<<8) + (ens210_data_buf[3]<<0);
 
@@ -150,8 +149,6 @@ void esp32_iAQ::read_from_ens210 ()
   */
    humidity = (float)((float)h_data/512.0f); // relative humidity (in %)
 }
-
-
 
 uint8_t esp32_iAQ::read_from_iAQc ()
 /*----------------------------------------------------------------------------
