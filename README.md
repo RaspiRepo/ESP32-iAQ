@@ -1,7 +1,6 @@
 # ESP32-iAQ
 
-IOT sensor application written in C/C++ for ESP32 microcontroller. Application integrated with I2C ENS210 and iAQ sensor to mesure temperature, relative humidity (RH%) and AirQuality (Co2 level), transmit InfluxDB time series database endpoint. 
-
+IOT sensor application written in C/C++ for ESP32 microcontroller. Application integrated with I2C ENS210 and iAQ sensor to mesure temperature, relative humidity (RH%) and AirQuality (Co2 level), transmit sensors data to InfluxDB time series database endpoint. 
 
 # Hardware requirement
 ## Sensor
