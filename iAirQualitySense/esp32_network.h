@@ -18,7 +18,7 @@ class esp32_network
 
     uint8_t init_wifi ();
 
-    //to send sensor value to iot endpointstry 
+    //send sensor value to iot endpoint 
     int send_iAQ_influxDB (float temparature, float humidity, uint16_t iAQ);
     int get_outdoor_weather(OUTDOOR_WEATHER *weather);
     int send_weather_report (WEATHER *weather);
