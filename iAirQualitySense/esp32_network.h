@@ -1,15 +1,7 @@
 #ifndef ESP32_NETWORK_H_
 #define ESP32_NETWORK_H_
-
+#include <WiFiMulti.h>
 #include <HTTPClient.h>
-
-#define NULL            0x00
-#define SSID            "SSID"
-#define WIFI_PASSWORD   "PSW00001"
-#define IOT_ENDPOINT    "http://192.168.0.115:8086/write?db=indoorSense"
-#define IOT_INFLUX_DB   "indoorSense"
-
-
 
 class esp32_network
 /*----------------------------------------------------------------------------
@@ -26,12 +18,15 @@ class esp32_network
 
     uint8_t init_wifi ();
 
-    //to send sensor value to iot endpoints
+    //to send sensor value to iot endpointstry 
     int send_iAQ_influxDB (float temparature, float humidity, uint16_t iAQ);
+    int get_outdoor_weather(OUTDOOR_WEATHER *weather);
+    int send_weather_report (WEATHER *weather);
+    
   private:
     HTTPClient http;
     String McChipID;
-    
+    WiFiMulti wifiMulti;    
 };
 
 #endif
