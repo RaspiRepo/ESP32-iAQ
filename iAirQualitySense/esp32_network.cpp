@@ -164,7 +164,7 @@ int esp32_network::get_outdoor_weather (OUTDOOR_WEATHER *weather)
                 weather->curr_temp.temparature = obj["main"]["temp"];
                 weather->curr_temp.humidity = obj["main"]["humidity"];
                 weather->curr_temp.pressure = obj["main"]["pressure"];
-                weather->descrp = obj["weather"]["id"];
+                //weather->descrp = obj["weather"]["id"];
 
                 weather->curr_temp.feels_like = obj["main"]["feels_like"];
                 weather->curr_temp.min = obj["main"]["temp_min"];
