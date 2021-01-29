@@ -55,6 +55,6 @@ InfluxDB and UI service running on Jetson Nano baord which collects data and wri
 3. [iAQ Sensor](datasheets/iAQ-core_DS000334_1-00-1512544.pdf)
 
 
-# Install InflucDB on Jetson Nano
+# Install InfluxDB on Jetson Nano
 
 [InfluxDB/Chronograf](https://github.com/RaspiRepo/jetsonNano-Tick)
